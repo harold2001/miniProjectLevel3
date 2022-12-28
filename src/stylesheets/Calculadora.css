@@ -1,0 +1,16 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* .boton {
+   width: 30%;
+   height: 25%;
+} */
+
+
+.columna {
+   height: 100%;
+   width: 25%;
+}
