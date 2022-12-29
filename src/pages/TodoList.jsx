@@ -43,7 +43,8 @@ export default function TodoList() {
       newButton.classList.add("btn")
       newButton.classList.add("btn-primary")
       newButton.classList.add("position-static")
-      newButton.textContent="Ok"
+      newButton.textContent="Ok";
+      newButton.addEventListener("click", () => alert("Hola"))
       divButtons.appendChild(newButton);
    }
 

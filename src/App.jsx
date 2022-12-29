@@ -3,7 +3,7 @@ import NavBar from './components/NavBar';
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { Fragment } from "react";
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, NavLink, Route, Routes } from "react-router-dom";
 import Calculadora from "./pages/Calculadora";
 import Calendario from "./pages/Calendario";
 import Home from "./pages/Home";
@@ -21,13 +21,13 @@ import { GiNotebook } from "react-icons/gi";
 function App() {
   return (
     <div className="App">
-      {/* <Fragment> */}
-        <BrowserRouter>
+      
+        <HashRouter>
           <nav className="navbar navbar-expand-lg" >
             <div className="container-fluid">
               <ul className="navbar-nav gap-2">
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/miniProjectLevel3"><AiTwotoneHome /> Inicio</NavLink>
+                  <NavLink className="nav-link" to="/"><AiTwotoneHome /> Inicio</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/calculadora"><AiFillCalculator /> Calculadora</NavLink>
@@ -46,14 +46,13 @@ function App() {
           </nav>
 
           <Routes>
-            <Route exact path="miniProjectLevel3" element={<Home />} />
-            <Route path="calculadora" element={<Calculadora />} />
-            <Route path="notas" element={<Notas />} />
-            <Route path="tareas" element={<Tareas />} />
-            <Route path="calendario" element={<Calendario />} />
+            <Route exact path="/" element={<Home />} />
+            <Route path="/calculadora" element={<Calculadora />} />
+            <Route path="/notas" element={<Notas />} />
+            <Route exact path="/tareas" element={<Tareas />} />
+            <Route path="/calendario" element={<Calendario />} />
           </Routes>
-        </BrowserRouter>
-      {/* </Fragment> */}
+        </HashRouter>
     </div>
   );
 }
