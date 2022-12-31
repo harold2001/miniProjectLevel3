@@ -13,5 +13,11 @@
 }
 
 .btnOkay {
-   left: -2.3rem;
+   order: -10;
+   background-color: #073c8a;
+   color: #fff;
+}
+
+.btnOkay:hover {
+   background-color: #157347;
 }

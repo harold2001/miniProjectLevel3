@@ -1,8 +1,6 @@
 import './App.css';
-import NavBar from './components/NavBar';
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import { Fragment } from "react";
 import { BrowserRouter, HashRouter, NavLink, Route, Routes } from "react-router-dom";
 import Calculadora from "./pages/Calculadora";
 import Calendario from "./pages/Calendario";
@@ -10,12 +8,8 @@ import Home from "./pages/Home";
 import Notas from "./pages/Notas";
 import Tareas from "./pages/TodoList";
 import { AiTwotoneHome, AiFillCalculator } from "react-icons/ai";
-import { GrNotes } from "react-icons/gr";
-import { GoTasklist } from "react-icons/go";
-import { MdTask } from "react-icons/md";
 import { BsFillCalendarDayFill } from "react-icons/bs";
 import { FaTasks } from "react-icons/fa";
-import { CgNotes } from "react-icons/cg";
 import { GiNotebook } from "react-icons/gi";
 
 function App() {
