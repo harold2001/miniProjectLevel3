@@ -8,7 +8,7 @@ function Boton({ number, value }) {
          <div className="col p-1" style={{ width: "100%", height: "25%" }}>
             <input
                style={{ width: "100%", height: "100%" }}
-               className="bg-primary border-light text-white rounded-4 fs-1"
+               className="bg-primary border-0 text-white rounded-4 fs-1"
                type="button"
                id={number}
                value={value}
@@ -35,29 +35,46 @@ function BotonEqual({ number, value }) {
       </Fragment>
    );
 }
+function BotonClear({ number, value }) {
+   return (
+      <Fragment>
+         <div className="col p-1" style={{ width: "100%", height: "100%" }}>
+            <input
+               style={{ width: "100%", height: "100%" }}
+               className="bg-danger border-0 text-white rounded-4 fs-1"
+               type="button"
+               id={number}
+               value={value}
+               onClick={() => document.calculator.ans.value = ""}
+            />
+         </div>
+      </Fragment>
+   );
+}
 
 export default function Calculadora() {
-   const [number, setNumber] = useState(0);
+   // const [number, setNumber] = useState(0);
    return (
-      <div className="mainContainer d-flex justify-content-center align-items-center ">
-         <form name="calculator">
+      <div className="mainContainer d-flex justify-content-center">
+         <form name="calculator" className="d-flex align-items-center" style={{height:"100%"}}>
          <div
             className="border border-2 border-light rounded-4 d-flex flex-wrap justify-content-center"
-            style={{ height: "500px", width: "400px" }}
+            style={{ height: "550px", width: "430px" }}
          >
-            <div className="px-3 pt-3" style={{ height: "20%", width: "100%" }}>
+            <div className="pt-3" style={{ height: "20%", width: "100%", padding:"0 .9rem 0 .9rem"}}>
                <input
                   type="textfield"
                   name="ans"
                   id="screen"
-                  className="border-light bg-primary text-white rounded-4 text-end fs-1"
-                  style={{ height: "100%", width: "100%" }}
+                  className="border-light bg-primary text-white rounded-4 text-end px-2"
+                  style={{ height: "100%", width: "100%", fontSize:"3.5rem"}}
+                  placeholder="0"
                   disabled
                />
             </div>
             <div
-               className="d-flex justify-content-center flex-wrap px-3 pb-3 pt-2"
-               style={{ width: "100%", height: "80%" }}
+               className="d-flex justify-content-center flex-wrap pb-3 pt-2"
+               style={{ width: "100%", height: "80%", padding:"0 .7rem 0 .7rem" }}
             >
                <div className="columna col-3">
                   <Boton number={7} value={7} />
@@ -82,6 +99,9 @@ export default function Calculadora() {
                   <Boton number={"*"} value={"*"} />
                   <Boton number={"-"} value={"-"} />
                   <Boton number={"+"} value={"+"} />
+               </div>
+               <div className="col-12" >
+                  <BotonClear number={"C"} value={"C"} />
                </div>
             </div>
          </div>

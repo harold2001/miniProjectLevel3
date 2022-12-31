@@ -1,4 +1,4 @@
-import React, { createRef, useState } from 'react';
+import React, { useState } from 'react';
 import uuid from 'react-uuid';
 import "../stylesheets/TodoList.css";
 
@@ -8,13 +8,13 @@ export default function TodoList() {
          id1: uuid(),
          id2: uuid(),
          text: 'task 1',
-         buttons:[],
+         buttons: [],
       },
       {
          id1: uuid(),
          id2: uuid(),
          text: 'task 2',
-         buttons:[],
+         buttons: [],
       },
    ]);
 
@@ -22,25 +22,22 @@ export default function TodoList() {
 
       let newId = uuid();
 
-      items.forEach((value, index) => {
-
-         if(value.id1 === id) {
+      // Corroboramos la existencia de un botón existente por medio de id's
+      items.forEach((value) => {
+         if (value.id1 === id) {
             value.buttons.push(newId);
-            console.log(items)
-         }
-         
-         if(value.buttons.length === 1) {
-            setButton(id, id2, newId)
-         } else {
-            console.log("ya hay boton")
          }
 
+         if (value.buttons.length === 1) {
+            setButton(id, id2, newId)
+         }
       })
 
       const catchInput = document.getElementById(id);
       catchInput.disabled = false;
       catchInput.focus();
-      
+
+      // Guardamos el valor dentro del objeto items
       catchInput.addEventListener("keyup", () => {
          const newValue = catchInput.value;
 
@@ -54,6 +51,7 @@ export default function TodoList() {
    }
 
    function setButton(id, id2, newId) {
+      // <div> que contiene los botones
       const divButtons = document.getElementById(id2);
 
       const newButton = document.createElement("button");
@@ -72,14 +70,10 @@ export default function TodoList() {
          const inputToDisabled = document.getElementById(id);
          inputToDisabled.disabled = true;
 
-         items.forEach((value, index) => {
-
-            if(value.id1 === id) {
+         items.forEach((value) => {
+            if (value.id1 === id) {
                value.buttons = []
-               console.log("array formateado")
-               console.log(items)
             }
-   
          })
 
       })
@@ -100,7 +94,7 @@ export default function TodoList() {
                id1: uuid(),
                id2: uuid(),
                text: text,
-               buttons:[],
+               buttons: [],
             },
          ]);
       }

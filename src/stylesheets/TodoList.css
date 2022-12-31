@@ -16,6 +16,7 @@
    order: -10;
    background-color: #073c8a;
    color: #fff;
+   transition: .3s ease;
 }
 
 .btnOkay:hover {
