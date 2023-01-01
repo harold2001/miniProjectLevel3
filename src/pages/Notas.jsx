@@ -35,9 +35,9 @@ export default function Notas() {
    }
 
    return (
-      <div className="mainContainer d-flex flex-column justify-content-start align-items-start gap-1 p-5">
-         <div className="container">
-            <div className="dropdown text-center">
+      <div className="d-flex flex-column justify-content-center align-items-start gap-4 p-5" id="firstContainer">
+         <div className="container position-relative mb-3 mt-4" id="containerData">
+            <div className="dropdown text-center" style={{ zIndex: "30" }}>
                <button id="buttonIngresar" className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
                   Ingresar texto nuevo
                </button>
@@ -62,9 +62,9 @@ export default function Notas() {
             </div>
          </div>
 
-         <div className="d-flex justify-content-start flex-wrap container position-relative top-50">
+         <div className="d-flex justify-content-center flex-wrap container position-relative flex-column-reverse flex-md-row">
             {notes.map(({ id, title, text }) =>
-               <div key={id} className="col-3 card border-0 me-4 mb-4 rounded-1 position-relative" style={{backgroundColor:"#d4b062"}}>
+               <div key={id} className="col-12 mb-3 card border-0 rounded-1 position-relative col-md-5 me-md-4 mb-md-4 col-lg-4 col-xl-3" style={{ backgroundColor: "#d4b062", zIndex: "20" }}>
                   <button
                      className="btn bg-transparent border-0 p-0 fs-1 position-absolute end-0 top-0 d-flex flex-column-reverse me-1 mt-1"
                      style={{ height: "45px" }}

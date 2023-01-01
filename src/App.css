@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 
-nav{
+nav {
   z-index: 30;
   background-color: #dc89b3;
-  height: 7vh;
+  position: absolute !important;
+  right: 0;
+  left: 0;
+  z-index: 40;
 }
 
 li {
@@ -49,7 +52,7 @@ li:hover {
 }
 
 .mainContainer {
-  height: 93vh;
+  height: 100vh;
   position: relative;
   z-index: 30;
 }

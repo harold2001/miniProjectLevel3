@@ -22,13 +22,13 @@ export default function TodoList() {
 
       let newId = uuid();
 
-      // Corroboramos la existencia de un botón existente por medio de id's
+      // Corroboramos la existencia de un antiguo botón ya creado por medio de id's
       items.forEach((value) => {
          if (value.id1 === id) {
             value.buttons.push(newId);
          }
 
-         if (value.buttons.length === 1) {
+         if ((value.buttons.length === 1) && (value.id1 === id)) {
             setButton(id, id2, newId)
          }
       })
@@ -37,7 +37,7 @@ export default function TodoList() {
       catchInput.disabled = false;
       catchInput.focus();
 
-      // Guardamos el valor dentro del objeto items
+      // Guardamos el valor dentro del objeto items y lo renderizamos
       catchInput.addEventListener("keyup", () => {
          const newValue = catchInput.value;
 
